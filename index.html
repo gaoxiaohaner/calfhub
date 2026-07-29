@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>北京燕软京创科技有限公司｜软件分发与终端管理平台投标能力说明</title>
+  <meta name="description" content="北京燕软京创科技有限公司面向PC软件分发、国产化适配、终端纳管与软件供应链安全项目的投标技术能力说明。" />
+  <style>
+    :root{
+      --navy:#07111f;
+      --navy-2:#0c192b;
+      --ink:#172235;
+      --blue:#1769e0;
+      --blue-2:#2e85ff;
+      --cyan:#20a9c9;
+      --orange:#eb7f2d;
+      --green:#198754;
+      --red:#c53b3b;
+      --paper:#f4f7fb;
+      --white:#ffffff;
+      --line:#dce4ee;
+      --muted:#65748a;
+      --soft:#eaf1fa;
+      --shadow:0 16px 50px rgba(7,17,31,.12);
+      --radius:20px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      color:var(--ink);
+      background:var(--paper);
+      font-family:"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",Arial,sans-serif;
+      line-height:1.6;
+    }
+    a{color:inherit}
+    .container{width:min(1220px,calc(100% - 40px));margin:auto}
+    .topbar{
+      position:sticky;top:0;z-index:100;
+      background:rgba(7,17,31,.94);
+      backdrop-filter:blur(14px);
+      border-bottom:1px solid rgba(255,255,255,.10);
+    }
+    .topbar .inner{
+      height:68px;display:flex;align-items:center;justify-content:space-between;gap:24px;
+    }
+    .brand{display:flex;align-items:center;gap:12px;color:#fff;font-weight:800}
+    .brand-mark{
+      width:40px;height:40px;border-radius:10px;
+      display:grid;place-items:center;
+      background:#fff;color:var(--navy);
+      font-size:20px;font-weight:900;
+    }
+    .brand small{display:block;color:#95a8c1;font-weight:500;font-size:11px;letter-spacing:.7px}
+    nav{display:flex;align-items:center;gap:22px}
+    nav a{text-decoration:none;color:#c5d1e2;font-size:13px}
+    nav a:hover{color:#fff}
+    .nav-btn{
+      border:1px solid rgba(255,255,255,.25);background:transparent;color:#fff;
+      padding:9px 13px;border-radius:8px;cursor:pointer;font-weight:700
+    }
+
+    .hero{
+      color:#fff;
+      background:
+        linear-gradient(100deg,rgba(7,17,31,.98) 0%,rgba(10,29,53,.96) 62%,rgba(13,52,87,.93) 100%),
+        radial-gradient(circle at 85% 20%,rgba(46,133,255,.4),transparent 35%);
+      position:relative;overflow:hidden;
+      padding:82px 0 54px;
+    }
+    .hero:after{
+      content:"";position:absolute;inset:0;opacity:.14;pointer-events:none;
+      background-image:
+        linear-gradient(rgba(255,255,255,.20) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(255,255,255,.20) 1px,transparent 1px);
+      background-size:44px 44px;
+      mask-image:linear-gradient(90deg,transparent,black 45%,black);
+    }
+    .hero-grid{
+      position:relative;z-index:2;
+      display:grid;grid-template-columns:1.06fr .94fr;gap:44px;align-items:center;
+    }
+    .kicker{display:flex;align-items:center;gap:10px;color:#9fd1ff;font-size:13px;font-weight:800;letter-spacing:1px}
+    .kicker:before{content:"";width:30px;height:2px;background:var(--blue-2)}
+    h1{font-size:clamp(42px,5.3vw,70px);line-height:1.08;margin:18px 0 20px;letter-spacing:-2px}
+    .hero-lead{font-size:18px;color:#c8d5e8;max-width:720px;margin:0;line-height:1.9}
+    .hero-note{
+      margin-top:28px;padding:14px 16px;border-left:3px solid var(--orange);
+      background:rgba(255,255,255,.055);color:#d9e3f1;font-size:13px
+    }
+    .hero-actions{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}
+    .btn{
+      min-height:46px;padding:0 18px;display:inline-flex;align-items:center;justify-content:center;
+      border-radius:9px;text-decoration:none;font-weight:800;font-size:14px;border:1px solid transparent
+    }
+    .btn.primary{background:var(--blue-2);color:#fff}
+    .btn.secondary{border-color:rgba(255,255,255,.28);color:#fff;background:rgba(255,255,255,.04)}
+    .hero-board{
+      background:#fff;color:var(--ink);border-radius:22px;padding:22px;box-shadow:0 26px 80px rgba(0,0,0,.28)
+    }
+    .board-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+    .board-head b{font-size:16px}
+    .status{font-size:12px;color:var(--green);background:#e8f7ef;padding:5px 8px;border-radius:999px;font-weight:800}
+    .hero-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+    .metric{
+      border:1px solid var(--line);border-radius:13px;padding:14px;background:#fbfdff;min-height:105px
+    }
+    .metric strong{display:block;font-size:27px;line-height:1.1;color:var(--navy)}
+    .metric span{display:block;color:var(--muted);font-size:12px;margin-top:7px}
+    .metric em{display:block;font-style:normal;font-size:10px;color:#8d9aad;margin-top:7px}
+    .legend{
+      display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;padding-top:13px;border-top:1px solid var(--line)
+    }
+    .legend i{width:8px;height:8px;border-radius:50%;display:inline-block;margin-right:5px}
+    .legend span{font-size:11px;color:var(--muted)}
+    .fact i{background:var(--blue)} .required i{background:var(--green)} .proposed i{background:var(--orange)}
+
+    .section{padding:74px 0}
+    .section.white{background:#fff}
+    .section.dark{background:var(--navy);color:#fff}
+    .section-head{
+      display:flex;align-items:end;justify-content:space-between;gap:32px;margin-bottom:30px
+    }
+    .section-title small{display:block;color:var(--blue);font-weight:800;letter-spacing:1.5px;margin-bottom:8px}
+    .dark .section-title small{color:#77b6ff}
+    .section-title h2{font-size:36px;line-height:1.2;margin:0;letter-spacing:-1px}
+    .section-head p{max-width:620px;color:var(--muted);margin:0}
+    .dark .section-head p{color:#9fb0c6}
+
+    .cards{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+    .card{
+      grid-column:span 4;background:#fff;border:1px solid var(--line);
+      border-radius:var(--radius);padding:24px;box-shadow:0 8px 30px rgba(7,17,31,.05)
+    }
+    .white .card{background:#fafdff}
+    .dark .card{background:#0e1c30;border-color:#1e3350;color:#fff;box-shadow:none}
+    .card.span6{grid-column:span 6}.card.span12{grid-column:span 12}
+    .card .num{font-size:12px;font-weight:900;color:var(--blue);letter-spacing:1px}
+    .dark .card .num{color:#80bcff}
+    .card h3{font-size:20px;margin:9px 0 10px}
+    .card p{margin:0;color:var(--muted);font-size:14px}
+    .dark .card p{color:#a9b8cc}
+    .tag-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+    .tag{
+      font-size:12px;padding:6px 9px;border-radius:7px;
+      background:var(--soft);color:#34506d;border:1px solid #d9e6f5;font-weight:700
+    }
+    .dark .tag{background:#152943;color:#c7dbf7;border-color:#284565}
+
+    .evidence-grid{display:grid;grid-template-columns:1fr 1.25fr;gap:18px}
+    .evidence-panel{
+      background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px
+    }
+    .evidence-panel h3{margin:0 0 18px;font-size:21px}
+    .proof-list{display:grid;gap:12px}
+    .proof{
+      display:grid;grid-template-columns:36px 1fr;gap:12px;align-items:start;
+      padding:12px 0;border-bottom:1px dashed var(--line)
+    }
+    .proof:last-child{border-bottom:0}
+    .proof .ico{
+      width:32px;height:32px;border-radius:9px;background:#e9f2ff;color:var(--blue);
+      display:grid;place-items:center;font-weight:900
+    }
+    .proof b{font-size:14px}.proof p{font-size:12px;color:var(--muted);margin:3px 0 0}
+    .transfer-table{width:100%;border-collapse:collapse;font-size:13px}
+    .transfer-table th,.transfer-table td{padding:13px 12px;border-bottom:1px solid var(--line);vertical-align:top;text-align:left}
+    .transfer-table th{color:#52657c;background:#f7f9fc;font-size:12px}
+    .transfer-table td:first-child{font-weight:800;width:28%}
+    .check{color:var(--green);font-weight:900}
+
+    .target-band{
+      display:grid;grid-template-columns:repeat(6,1fr);gap:12px;
+      margin-top:22px
+    }
+    .target-item{
+      background:#fff;border:1px solid var(--line);border-radius:15px;padding:16px;text-align:center
+    }
+    .target-item strong{display:block;font-size:25px;color:var(--navy)}
+    .target-item span{font-size:12px;color:var(--muted)}
+    .target-item small{display:block;color:var(--orange);font-size:10px;margin-top:5px}
+
+    .architecture{
+      background:#fff;border:1px solid var(--line);border-radius:24px;padding:26px;box-shadow:var(--shadow)
+    }
+    .arch-layer{
+      display:grid;grid-template-columns:150px 1fr;gap:14px;align-items:stretch;margin-bottom:12px
+    }
+    .arch-layer:last-child{margin-bottom:0}
+    .layer-name{
+      background:var(--navy);color:#fff;border-radius:12px;padding:14px;
+      display:flex;align-items:center;justify-content:center;text-align:center;font-weight:900;font-size:13px
+    }
+    .layer-content{
+      display:grid;grid-template-columns:repeat(5,1fr);gap:10px
+    }
+    .layer-content.four{grid-template-columns:repeat(4,1fr)}
+    .layer-content.three{grid-template-columns:repeat(3,1fr)}
+    .arch-node{
+      border:1px solid var(--line);border-radius:12px;padding:13px;background:#f9fbfe;text-align:center
+    }
+    .arch-node b{display:block;font-size:13px;color:#223653}
+    .arch-node span{display:block;font-size:10px;color:var(--muted);margin-top:4px}
+    .flow-note{
+      margin-top:18px;padding:15px;border-radius:12px;background:#eef5ff;color:#294b73;font-size:13px
+    }
+
+    .client-shell{display:grid;grid-template-columns:1fr 70px 1fr;gap:12px;align-items:center}
+    .client-box{
+      border-radius:18px;border:1px solid var(--line);padding:22px;background:#fff
+    }
+    .client-box h3{margin:0 0 14px;font-size:19px}
+    .submodule{padding:11px 12px;border-radius:10px;background:#f5f8fc;border:1px solid #e1e8f1;margin-top:9px}
+    .submodule b{display:block;font-size:13px}.submodule span{font-size:11px;color:var(--muted)}
+    .bridge{text-align:center;color:var(--blue);font-weight:900}
+    .bridge:before,.bridge:after{content:"";display:block;width:100%;height:1px;background:#9dc3f5;margin:9px 0}
+
+    .matrix-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:18px;background:#fff}
+    .matrix{width:100%;border-collapse:collapse;min-width:900px;font-size:13px}
+    .matrix th,.matrix td{padding:13px 14px;border-bottom:1px solid var(--line);text-align:left}
+    .matrix th{background:#f3f6fa;color:#52657c;font-size:12px}
+    .matrix td:first-child{font-weight:800}
+    .level{
+      display:inline-block;padding:4px 7px;border-radius:6px;font-size:11px;font-weight:800
+    }
+    .l1{background:#e7f5ed;color:#177b4b}.l2{background:#fff2df;color:#ac611c}.l3{background:#eef1f6;color:#66758a}
+
+    .pipeline{
+      display:grid;grid-template-columns:repeat(9,1fr);gap:8px;align-items:center
+    }
+    .pipe-step{
+      min-height:100px;border-radius:13px;border:1px solid var(--line);background:#fff;
+      display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:9px
+    }
+    .pipe-step b{font-size:12px}.pipe-step span{font-size:10px;color:var(--muted);margin-top:5px}
+    .pipe-arrow{text-align:center;color:var(--blue);font-size:20px}
+
+    .state-machine{
+      display:flex;gap:8px;align-items:center;flex-wrap:wrap
+    }
+    .state{
+      padding:9px 11px;border:1px solid #cfdbea;background:#fff;border-radius:9px;font-size:12px;font-weight:800
+    }
+    .state.orange{border-color:#f2c599;background:#fff7ef;color:#9a521a}
+    .state.green{border-color:#b9dfca;background:#edf9f2;color:#167247}
+    .state.red{border-color:#edbaba;background:#fff0f0;color:#a32929}
+    .state-arrow{color:#7895b7;font-weight:900}
+
+    .tech-table{width:100%;border-collapse:collapse;background:#fff;border-radius:16px;overflow:hidden;font-size:13px}
+    .tech-table th,.tech-table td{padding:14px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+    .tech-table th{width:20%;background:#f4f7fb;color:#43556c}
+    .tech-table td:nth-child(2){width:30%;font-weight:800;color:#223653}
+    .tech-table td:nth-child(3){color:var(--muted)}
+
+    .roadmap{display:grid;grid-template-columns:repeat(6,1fr);gap:11px}
+    .phase{background:#fff;border:1px solid var(--line);border-radius:16px;padding:17px;position:relative}
+    .phase:before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--blue);border-radius:16px 0 0 16px}
+    .phase strong{font-size:14px}.phase em{display:block;font-style:normal;color:var(--blue);font-weight:900;font-size:12px;margin-bottom:8px}
+    .phase p{font-size:11px;color:var(--muted);margin:0}
+
+    .commit-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+    .commit{
+      background:#0e1c30;border:1px solid #213a59;border-radius:16px;padding:19px;color:#fff
+    }
+    .commit strong{font-size:25px;display:block;color:#84beff}
+    .commit span{font-size:12px;color:#b4c3d5}
+    .commit small{display:block;color:#f4b276;margin-top:6px;font-size:10px}
+
+    .risk-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+    .risk{background:#fff;border:1px solid var(--line);border-radius:16px;padding:19px}
+    .risk h4{margin:0 0 7px;font-size:15px}
+    .risk p{margin:0;color:var(--muted);font-size:12px}
+    .risk b{color:var(--blue)}
+
+    .footer{
+      background:#050b14;color:#8ea0b8;padding:34px 0;font-size:12px
+    }
+    .footer .inner{display:flex;justify-content:space-between;gap:20px;border-top:1px solid #1b293a;padding-top:20px}
+    .disclaimer{
+      margin-top:20px;background:#fff8ed;border:1px solid #f2d2aa;color:#785028;
+      border-radius:13px;padding:14px;font-size:12px
+    }
+
+    @media(max-width:980px){
+      nav a{display:none}
+      .hero-grid,.evidence-grid,.client-shell{grid-template-columns:1fr}
+      .bridge:before,.bridge:after{width:60%;margin:8px auto}.bridge{transform:none}
+      .hero-metrics{grid-template-columns:repeat(2,1fr)}
+      .card,.card.span6{grid-column:span 12}
+      .target-band{grid-template-columns:repeat(3,1fr)}
+      .arch-layer{grid-template-columns:1fr}
+      .layer-content,.layer-content.four,.layer-content.three{grid-template-columns:repeat(2,1fr)}
+      .pipeline{grid-template-columns:repeat(3,1fr)}
+      .pipe-arrow{display:none}
+      .roadmap{grid-template-columns:repeat(2,1fr)}
+      .commit-grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media(max-width:600px){
+      .container{width:min(100% - 24px,1220px)}
+      .hero{padding-top:58px}.hero-metrics{grid-template-columns:1fr}
+      .section-head{align-items:start;flex-direction:column}
+      .target-band,.layer-content,.layer-content.four,.layer-content.three,.pipeline,.roadmap,.commit-grid,.risk-grid{grid-template-columns:1fr}
+      h1{font-size:42px}.section-title h2{font-size:30px}
+    }
+    @media print{
+      .topbar,.hero-actions{display:none!important}
+      body{background:#fff}
+      .section{padding:34px 0}
+      .card,.architecture,.evidence-panel,.matrix-wrap,.phase,.risk{break-inside:avoid}
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container inner">
+      <div class="brand">
+        <div class="brand-mark">燕</div>
+        <div>北京燕软京创科技有限公司<small>YANRUAN JINGCHUANG TECHNOLOGY</small></div>
+      </div>
+      <nav>
+        <a href="#evidence">能力佐证</a>
+        <a href="#blueprint">系统蓝图</a>
+        <a href="#client">跨 OS 客户端</a>
+        <a href="#architecture">技术架构</a>
+        <a href="#roadmap">实施计划</a>
+        <button class="nav-btn" onclick="window.print()">打印 / 导出 PDF</button>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="kicker">投标技术能力说明 · 软件分发与终端管理平台</div>
+        <h1>把“软件商店”建设成<br/>可管、可控、可审计的<br/>企业软件供应链平台</h1>
+        <p class="hero-lead">
+          面向 Windows 与国产 Linux、多 CPU 架构和分级部署场景，
+          建设覆盖软件仓库、合规审核、发布分发、客户端纳管、安装升级、
+          应用级回滚、高可用和运营审计的一体化平台。
+        </p>
+        <div class="hero-note">
+          本方案强调“可核验”：人员背景与既有项目以证明材料为准；招标指标按需求文件引用；
+          新增技术数据均标注为建议承诺值，须在正式投标前结合硬件与网络环境确认。
+        </div>
+        <div class="hero-actions">
+          <a class="btn primary" href="#blueprint">查看技术方案</a>
+          <a class="btn secondary" href="#roadmap">查看一年排期</a>
+        </div>
+      </div>
+
+      <div class="hero-board">
+        <div class="board-head">
+          <b>投标关键信息面板</b><span class="status">方案已结构化</span>
+        </div>
+        <div class="hero-metrics">
+          <div class="metric"><strong>3 人</strong><span>拟投入核心 AI 研发团队</span><em>团队计划</em></div>
+          <div class="metric"><strong>3 所</strong><span>北理工 / 中科大 / 北航背景</span><em>团队事实</em></div>
+          <div class="metric"><strong>5 家</strong><span>百度 / Intel / 字节 / 阿里 / 腾讯经历</span><em>团队事实</em></div>
+          <div class="metric"><strong>≥500</strong><span>终端纳管与监测目标</span><em>招标指标</em></div>
+          <div class="metric"><strong>2 级</strong><span>中心仓库 + 二级节点仓库</span><em>招标指标</em></div>
+          <div class="metric"><strong>3 类</strong><span>DEB / Windows EXE / 系统镜像</span><em>招标指标</em></div>
+        </div>
+        <div class="legend">
+          <span class="fact"><i></i>已有事实</span>
+          <span class="required"><i></i>招标要求</span>
+          <span class="proposed"><i></i>建议承诺值</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section white" id="evidence">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-title">
+          <small>01 / CAPABILITY EVIDENCE</small>
+          <h2>从“经历描述”转为“项目相关能力证明”</h2>
+        </div>
+        <p>不堆砌公司名称，而是说明既有经验如何迁移到本项目的软件仓库、客户端、国产化适配和复杂交付中。</p>
+      </div>
+
+      <div class="evidence-grid">
+        <div class="evidence-panel">
+          <h3>可核验的团队与项目基础</h3>
+          <div class="proof-list">
+            <div class="proof"><div class="ico">3</div><div><b>重点高校技术背景</b><p>北京理工大学、中国科学技术大学、北京航空航天大学；投标时建议附脱敏学历或人员简历。</p></div></div>
+            <div class="proof"><div class="ico">5</div><div><b>头部科技企业工程经历</b><p>百度、Intel、字节跳动、阿里巴巴、腾讯相关团队经历；建议提供在职经历或项目角色证明。</p></div></div>
+            <div class="proof"><div class="ico">AI</div><div><b>模型与视觉智能工程经验</b><p>覆盖视觉智能、小模型和大模型的业务集成、部署优化与软硬件协同。</p></div></div>
+            <div class="proof"><div class="ico">芯</div><div><b>国产芯片与算力适配经验</b><p>具备华为相关国产卡、x86、ARM 等环境下的适配、推理加速和问题定位经验。</p></div></div>
+            <div class="proof"><div class="ico">政</div><div><b>政府与企业项目实施经验</b><p>覆盖工研院区块链项目，以及校园饮水、净水等企业数字化场景。</p></div></div>
+          </div>
+        </div>
+
+        <div class="evidence-panel">
+          <h3>既有能力与本项目的迁移关系</h3>
+          <table class="transfer-table">
+            <thead><tr><th>既有经验</th><th>可迁移到本项目</th><th>证明方式</th></tr></thead>
+            <tbody>
+              <tr><td>国产卡 / CPU 适配</td><td><span class="check">✓</span> 跨架构构建、依赖排查、运行环境探测、性能与兼容性验证</td><td>适配报告、测试记录、演示环境</td></tr>
+              <tr><td>AI 推理加速</td><td><span class="check">✓</span> 跨层定位能力：应用、框架、运行时、驱动、硬件</td><td>优化前后数据、问题清单、技术复盘</td></tr>
+              <tr><td>企业数字化系统</td><td><span class="check">✓</span> 用户、设备、后台、运营、现场部署与持续运维</td><td>合同、验收、系统截图、客户证明</td></tr>
+              <tr><td>政府科技项目</td><td><span class="check">✓</span> 规范文档、设计评审、部署交付、验收与安全要求</td><td>项目材料、验收文档、交付清单</td></tr>
+              <tr><td>大模型辅助研发</td><td><span class="check">✓</span> 需求拆解、代码生成、测试生成、文档维护与缺陷定位提效</td><td>研发流程、CI 记录、测试覆盖数据</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="disclaimer">
+        <b>投标合规提示：</b>当前已知历史项目信息不足以支撑“终端规模、并发量、交付金额、性能提升比例”等历史量化成绩，
+        页面未虚构此类数字。正式投标可将真实合同、验收报告、适配测试报告中的数字替换进来。
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="blueprint">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-title">
+          <small>02 / PROJECT BLUEPRINT</small>
+          <h2>本项目拟实现的完整业务闭环</h2>
+        </div>
+        <p>从“上传一个文件”升级为受控的软件供应链流程：所有软件有来源、有版本、有审核、有签名、有发布范围、有安装结果。</p>
+      </div>
+
+      <div class="cards">
+        <div class="card"><div class="num">A / 仓库</div><h3>多类型软件资产管理</h3><p>统一管理 DEB、Windows EXE、系统镜像，并按软件、版本、操作系统、CPU 架构和发布批次组织。</p><div class="tag-row"><span class="tag">版本模型</span><span class="tag">依赖关系</span><span class="tag">历史激活</span></div></div>
+        <div class="card"><div class="num">B / 审核</div><h3>合规与安全发布链</h3><p>命名、版本、格式、签名合规检查，结合人工审批、哈希校验和发布审计，降低软件供应链风险。</p><div class="tag-row"><span class="tag">SHA-256</span><span class="tag">签名校验</span><span class="tag">审批留痕</span></div></div>
+        <div class="card"><div class="num">C / 分发</div><h3>终端软件分发</h3><p>支持按组织、终端组、系统和 CPU 匹配软件包，执行下载、安装、升级、卸载和结果回传。</p><div class="tag-row"><span class="tag">断点续传</span><span class="tag">分批发布</span><span class="tag">失败重试</span></div></div>
+        <div class="card"><div class="num">D / 客户端</div><h3>跨 OS 统一客户端</h3><p>采用 GUI 与高权限 Agent 分离架构，适配 Windows、国产 Linux 及 x86_64、ARM64、LoongArch64。</p><div class="tag-row"><span class="tag">双进程</span><span class="tag">适配器模式</span><span class="tag">本地任务持久化</span></div></div>
+        <div class="card"><div class="num">E / 纳管</div><h3>终端资产与状态管理</h3><p>采集系统版本、CPU 架构、补丁版本、软件列表、在线状态和基础性能指标，形成终端资产视图。</p><div class="tag-row"><span class="tag">设备身份</span><span class="tag">心跳</span><span class="tag">软件清单</span></div></div>
+        <div class="card"><div class="num">F / 部署</div><h3>分级仓库与高可用</h3><p>中心节点统一管理，二级节点承担本地缓存与分发；应用服务多实例，数据库和文件存储采用成熟高可用组件。</p><div class="tag-row"><span class="tag">一级 / 二级</span><span class="tag">增量同步</span><span class="tag">故障切换</span></div></div>
+      </div>
+
+      <div class="target-band">
+        <div class="target-item"><strong>≥500</strong><span>纳管终端</span><small>招标要求</small></div>
+        <div class="target-item"><strong>20 GB</strong><span>建议最大单文件</span><small>建议承诺</small></div>
+        <div class="target-item"><strong>100%</strong><span>下载文件哈希校验</span><small>建议承诺</small></div>
+        <div class="target-item"><strong>≥99%</strong><span>任务结果回传目标</span><small>建议承诺</small></div>
+        <div class="target-item"><strong>2 级</strong><span>仓库部署层级</span><small>招标要求</small></div>
+        <div class="target-item"><strong>3 类</strong><span>首期软件资产类型</span><small>招标要求</small></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section white" id="architecture">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-title">
+          <small>03 / TECHNICAL ARCHITECTURE</small>
+          <h2>适合 3 人核心团队的一期技术架构</h2>
+        </div>
+        <p>采用“模块化单体 + 异步任务 + 对象存储 + 独立客户端 Agent”，避免过早微服务化，同时保留后续拆分和扩容能力。</p>
+      </div>
+
+      <div class="architecture">
+        <div class="arch-layer">
+          <div class="layer-name">访问与运营层</div>
+          <div class="layer-content four">
+            <div class="arch-node"><b>Web 管理后台</b><span>仓库 / 软件 / 终端 / 报表</span></div>
+            <div class="arch-node"><b>Web 门户</b><span>搜索 / 下载 / 镜像展示</span></div>
+            <div class="arch-node"><b>本地客户端 GUI</b><span>安装 / 更新 / 评价</span></div>
+            <div class="arch-node"><b>开放 API</b><span>第三方系统集成</span></div>
+          </div>
+        </div>
+        <div class="arch-layer">
+          <div class="layer-name">业务控制层</div>
+          <div class="layer-content">
+            <div class="arch-node"><b>软件仓库域</b><span>制品 / 版本 / 依赖</span></div>
+            <div class="arch-node"><b>审核发布域</b><span>检测 / 审批 / 上下架</span></div>
+            <div class="arch-node"><b>分发任务域</b><span>调度 / 状态机 / 重试</span></div>
+            <div class="arch-node"><b>终端管理域</b><span>注册 / 组织 / 心跳</span></div>
+            <div class="arch-node"><b>权限审计域</b><span>RBAC / 日志 / 追溯</span></div>
+          </div>
+        </div>
+        <div class="arch-layer">
+          <div class="layer-name">制品与消息层</div>
+          <div class="layer-content four">
+            <div class="arch-node"><b>对象存储</b><span>安装包 / 镜像 / 报告</span></div>
+            <div class="arch-node"><b>关系数据库</b><span>业务与状态数据</span></div>
+            <div class="arch-node"><b>缓存与分布式锁</b><span>会话 / 幂等 / 互斥</span></div>
+            <div class="arch-node"><b>消息与任务队列</b><span>异步调度 / 削峰</span></div>
+          </div>
+        </div>
+        <div class="arch-layer">
+          <div class="layer-name">终端执行层</div>
+          <div class="layer-content four">
+            <div class="arch-node"><b>Windows Agent</b><span>Service / MSI / EXE</span></div>
+            <div class="arch-node"><b>Linux Agent</b><span>Daemon / DEB / RPM 扩展</span></div>
+            <div class="arch-node"><b>OS 适配层</b><span>系统 / 权限 / 服务 / 进程</span></div>
+            <div class="arch-node"><b>包执行层</b><span>安装 / 卸载 / 升级 / 回滚</span></div>
+          </div>
+        </div>
+        <div class="arch-layer">
+          <div class="layer-name">基础设施层</div>
+          <div class="layer-content four">
+            <div class="arch-node"><b>负载均衡</b><span>Nginx / Keepalived</span></div>
+            <div class="arch-node"><b>监控告警</b><span>Prometheus / Grafana</span></div>
+            <div class="arch-node"><b>日志追踪</b><span>Loki / OpenTelemetry</span></div>
+            <div class="arch-node"><b>备份恢复</b><span>数据库 / 制品 / 配置</span></div>
+          </div>
+        </div>
+        <div class="flow-note">
+          <b>架构原则：</b>控制面与文件数据面分离；业务服务先采用模块化单体降低 3 人团队协作成本；
+          软件包使用对象存储承载；任务通过状态机和幂等机制保证“不会重复装、失败可追踪、重启可续跑”。
+        </div>
+      </div>
+
+      <div style="height:18px"></div>
+      <table class="tech-table">
+        <tbody>
+          <tr><th>Web 管理端</th><td>Vue 3 + TypeScript + Vite + ECharts</td><td>开发效率高，适合仓库、终端、报表和配置型后台；组件化便于 AI 辅助生成与测试。</td></tr>
+          <tr><th>平台服务端</th><td>Java 21 + Spring Boot 3，模块化单体</td><td>成熟的鉴权、审计、事务、文件接口与企业交付生态；后续可按业务域拆分服务。</td></tr>
+          <tr><th>客户端</th><td>C++17 + Qt，GUI / Agent 双进程</td><td>适合 Windows 与国产 Linux 桌面；高权限 Agent 执行安装，GUI 仅负责交互，降低权限风险。</td></tr>
+          <tr><th>终端本地状态</th><td>SQLite + 本地滚动日志</td><td>保存任务状态、下载断点和执行记录，支持断网、重启、服务异常后的任务恢复。</td></tr>
+          <tr><th>数据与文件</th><td>PostgreSQL + Redis + MinIO / S3</td><td>业务状态、缓存锁与大文件制品职责分离，避免数据库存储安装包。</td></tr>
+          <tr><th>异步任务</th><td>RabbitMQ；一期可按压力延后启用</td><td>用于任务削峰、结果处理和仓库同步；小规模试点可先以内置任务表实现。</td></tr>
+          <tr><th>部署与观测</th><td>Nginx + Docker + Prometheus + Grafana + Loki</td><td>支持快速部署、应用多实例、指标监控、日志汇聚和问题追踪。</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="section" id="client">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-title">
+          <small>04 / CROSS-OS CLIENT</small>
+          <h2>跨 OS 客户端：统一业务内核，隔离系统差异</h2>
+        </div>
+        <p>客户端不是一个普通下载器，而是承担身份、下载、校验、高权限安装、状态采集和任务恢复的终端执行引擎。</p>
+      </div>
+
+      <div class="client-shell">
+        <div class="client-box">
+          <h3>用户态客户端 GUI</h3>
+          <div class="submodule"><b>软件市场</b><span>搜索、分类、详情、下载与安装进度</span></div>
+          <div class="submodule"><b>更新中心</b><span>版本提示、一键更新、重启提醒</span></div>
+          <div class="submodule"><b>用户交互</b><span>登录、评价、错误提示、日志反馈</span></div>
+          <div class="submodule"><b>最低权限</b><span>不直接持有管理员或 root 权限</span></div>
+        </div>
+        <div class="bridge">IPC<br/>鉴权<br/>状态</div>
+        <div class="client-box">
+          <h3>高权限 Agent / 系统服务</h3>
+          <div class="submodule"><b>任务执行器</b><span>下载、校验、安装、卸载、升级、回滚</span></div>
+          <div class="submodule"><b>OS Adapter</b><span>Windows / UOS / 麒麟 / openEuler 扩展</span></div>
+          <div class="submodule"><b>Package Handler</b><span>MSI / EXE / DEB / RPM 扩展</span></div>
+          <div class="submodule"><b>任务恢复</b><span>SQLite 持久化、幂等、防重复、断点续传</span></div>
+        </div>
+      </div>
+
+      <div style="height:24px"></div>
+      <div class="matrix-wrap">
+        <table class="matrix">
+          <thead>
+            <tr><th>操作系统 / 发行版</th><th>CPU 架构</th><th>首期包格式</th><th>建议支持级别</th><th>关键验证点</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Windows 10 / 11</td><td>x86_64</td><td>MSI、EXE</td><td><span class="level l1">一级：完整支持</span></td><td>Windows Service、UAC、静默参数、注册表与版本检测</td></tr>
+            <tr><td>指定国产 Linux 发行版 A</td><td>x86_64</td><td>DEB</td><td><span class="level l1">一级：完整支持</span></td><td>systemd、root 权限、桌面入口、离线依赖</td></tr>
+            <tr><td>指定国产 Linux 发行版 B</td><td>aarch64</td><td>DEB</td><td><span class="level l1">一级：完整支持</span></td><td>交叉编译、动态库、依赖仓库、客户端自升级</td></tr>
+            <tr><td>国产 Linux</td><td>loongarch64</td><td>DEB</td><td><span class="level l2">二级：专项适配</span></td><td>Qt / 三方库工具链、系统 ABI、真实硬件验证</td></tr>
+            <tr><td>openEuler 类系统</td><td>x86_64 / aarch64</td><td>RPM</td><td><span class="level l3">扩展：二期</span></td><td>RPM 依赖、dnf/yum、包降级与冲突处理</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="disclaimer">
+        <b>实施建议：</b>“国产 Linux”必须落实到发行版、版本、CPU 和桌面环境四维矩阵。
+        LoongArch64 应在第 1 个月完成工具链与 Qt 依赖 PoC，通过后再写入强验收范围。
+      </div>
+    </div>
+  </section>
+
+  <section class="section white">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-title">
+          <small>05 / SOFTWARE SUPPLY CHAIN</small>
+          <h2>软件从上传到安装的受控链路</h2>
+        </div>
+        <p>将软件安全、发布审批、文件完整性和终端安装结果串成一条可审计链路。</p>
+      </div>
+
+      <div class="pipeline">
+        <div class="pipe-step"><b>上传</b><span>分片 / 断点续传</span></div><div class="pipe-arrow">→</div>
+        <div class="pipe-step"><b>合规检测</b><span>命名 / 版本 / 格式</span></div><div class="pipe-arrow">→</div>
+        <div class="pipe-step"><b>安全校验</b><span>哈希 / 签名 / 扫描接口</span></div><div class="pipe-arrow">→</div>
+        <div class="pipe-step"><b>审核发布</b><span>审批 / 范围 / 灰度</span></div><div class="pipe-arrow">→</div>
+        <div class="pipe-step"><b>终端安装</b><span>再校验 / 执行 / 回传</span></div>
+      </div>
+
+      <div style="height:26px"></div>
+      <div class="cards">
+        <div class="card span6">
+          <div class="num">软件模型</div>
+          <h3>产品、版本、制品、发布批次分离</h3>
+          <p>同一软件版本可关联 Windows x86_64、Linux ARM64、LoongArch64 等多个制品；客户端根据系统指纹精准匹配。</p>
+          <div class="tag-row"><span class="tag">software_id</span><span class="tag">version_id</span><span class="tag">artifact_id</span><span class="tag">release_id</span></div>
+        </div>
+        <div class="card span6">
+          <div class="num">依赖模型</div>
+          <h3>显式依赖、冲突和前置条件</h3>
+          <p>记录依赖包、版本约束、安装顺序、冲突软件和磁盘空间要求；离线场景支持依赖集合随主包分发。</p>
+          <div class="tag-row"><span class="tag">依赖图</span><span class="tag">离线 Bundle</span><span class="tag">冲突检测</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="execution">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-title">
+          <small>06 / INSTALL & ROLLBACK</small>
+          <h2>安装、升级、回滚的统一执行模型</h2>
+        </div>
+        <p>平台下发统一任务，客户端按操作系统和包格式选择执行器；统一状态、错误码和日志，避免“服务端成功、终端实际失败”。</p>
+      </div>
+
+      <div class="card span12">
+        <div class="num">统一状态机</div>
+        <h3>任务全过程可追踪</h3>
+        <div class="state-machine">
+          <span class="state">待执行</span><span class="state-arrow">→</span>
+          <span class="state">环境检查</span><span class="state-arrow">→</span>
+          <span class="state">下载</span><span class="state-arrow">→</span>
+          <span class="state">哈希 / 签名校验</span><span class="state-arrow">→</span>
+          <span class="state orange">备份配置</span><span class="state-arrow">→</span>
+          <span class="state orange">安装 / 升级</span><span class="state-arrow">→</span>
+          <span class="state">结果验证</span><span class="state-arrow">→</span>
+          <span class="state green">成功 / 待重启</span>
+        </div>
+        <div style="height:12px"></div>
+        <div class="state-machine">
+          <span class="state red">执行失败</span><span class="state-arrow">→</span>
+          <span class="state orange">应用级回滚</span><span class="state-arrow">→</span>
+          <span class="state green">回滚成功</span>
+          <span class="state-arrow">或</span>
+          <span class="state red">回滚失败 + 严重告警</span>
+        </div>
+      </div>
+
+      <div style="height:18px"></div>
+      <div class="cards">
+        <div class="card"><div class="num">环境检查</div><h3>安装前阻断不兼容任务</h3><p>检查 OS、CPU、版本、磁盘、权限、依赖、冲突软件和运行进程，避免错误安装。</p></div>
+        <div class="card"><div class="num">结果验证</div><h3>不只依赖退出码</h3><p>组合使用 MSI ProductCode、注册表、文件版本、包管理记录、服务、进程和自定义检测命令。</p></div>
+        <div class="card"><div class="num">回滚分级</div><h3>首期聚焦应用级回滚</h3><p>保留旧包、备份配置、卸载新版本并恢复旧版本；系统快照和内核回退作为专项能力。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section dark">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-title">
+          <small>07 / PROPOSED ACCEPTANCE TARGETS</small>
+          <h2>建议写入技术方案的量化指标</h2>
+        </div>
+        <p>以下为建议目标，不是现有历史业绩；正式承诺前须根据服务器、存储、网络带宽和终端环境完成基准测试。</p>
+      </div>
+      <div class="commit-grid">
+        <div class="commit"><strong>≥500 台</strong><span>终端纳管与状态监测</span><small>招标明确要求</small></div>
+        <div class="commit"><strong>≥99%</strong><span>在线终端任务结果回传率</span><small>建议验收口径</small></div>
+        <div class="commit"><strong>100%</strong><span>制品下载后 SHA-256 校验</span><small>建议安全要求</small></div>
+        <div class="commit"><strong>20 GB</strong><span>单文件分片上传与断点下载</span><small>建议容量指标</small></div>
+        <div class="commit"><strong>≤5 分钟</strong><span>应用节点故障后的服务恢复目标</span><small>基础高可用建议</small></div>
+        <div class="commit"><strong>≥95%</strong><span>标准软件自动安装成功率</span><small>需静默参数与依赖完整</small></div>
+        <div class="commit"><strong>3 类</strong><span>DEB / EXE / 系统镜像首期管理</span><small>招标明确要求</small></div>
+        <div class="commit"><strong>2 级</strong><span>中心与二级仓库部署</span><small>招标明确要求</small></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section white" id="roadmap">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-title">
+          <small>08 / 12-MONTH DELIVERY PLAN</small>
+          <h2>3 人核心研发团队的一年实施计划</h2>
+        </div>
+        <p>以端到端闭环优先，不采用“先做完所有后台、最后联调客户端”的高风险方式。</p>
+      </div>
+
+      <div class="roadmap">
+        <div class="phase"><em>M1</em><strong>需求冻结与 PoC</strong><p>兼容矩阵、数据模型、API、Windows Service、Linux Daemon、LoongArch 工具链验证。</p></div>
+        <div class="phase"><em>M2–M3</em><strong>平台与客户端骨架</strong><p>登录权限、仓库、上传、版本、终端注册、心跳、本地状态库。</p></div>
+        <div class="phase"><em>M4–M5</em><strong>下载安装闭环</strong><p>MSI / EXE / DEB 下载、校验、安装、卸载、结果检测和日志回传。</p></div>
+        <div class="phase"><em>M6</em><strong>升级与应用回滚</strong><p>版本比较、覆盖升级、失败重试、任务恢复、旧版本恢复。</p></div>
+        <div class="phase"><em>M7–M8</em><strong>纳管与分发策略</strong><p>终端分组、软件清单、定时分批、并发控制、暂停取消和基础报表。</p></div>
+        <div class="phase"><em>M9</em><strong>安全强化</strong><p>TLS、设备认证、哈希与签名校验、RBAC、审计、幂等和防重复。</p></div>
+        <div class="phase"><em>M10</em><strong>部署与高可用</strong><p>多实例、对象存储、备份恢复、监控日志、性能优化。</p></div>
+        <div class="phase"><em>M11</em><strong>兼容性与压力测试</strong><p>多 OS / CPU / 包格式、异常网络、磁盘不足、服务重启和 500 台验证。</p></div>
+        <div class="phase"><em>M12</em><strong>试点与交付</strong><p>现场部署、缺陷修复、文档、培训、验收和运维移交。</p></div>
+      </div>
+
+      <div style="height:22px"></div>
+      <div class="cards">
+        <div class="card">
+          <div class="num">人员 A</div><h3>架构 / 服务端 / DevOps</h3>
+          <p>负责数据模型、仓库、权限、任务调度、部署和总体架构。</p>
+        </div>
+        <div class="card">
+          <div class="num">人员 B</div><h3>Windows 客户端</h3>
+          <p>负责 Qt GUI、Windows Service、MSI/EXE、UAC、安装检测与自升级。</p>
+        </div>
+        <div class="card">
+          <div class="num">人员 C</div><h3>Linux 客户端 / Web 协同</h3>
+          <p>负责 Linux Daemon、DEB、国产 CPU 适配，并协同完成 Web 管理端。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="risk">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-title">
+          <small>09 / RISK CONTROL</small>
+          <h2>投标方案中需要主动说明的难点与控制措施</h2>
+        </div>
+        <p>敢于明确边界、前置条件和验证方法，比承诺“所有系统全部支持”更能体现工程可信度。</p>
+      </div>
+      <div class="risk-grid">
+        <div class="risk"><h4>国产 Linux 碎片化</h4><p><b>措施：</b>形成发行版 × 版本 × CPU × 桌面环境矩阵，首月完成真实硬件 PoC，按支持等级验收。</p></div>
+        <div class="risk"><h4>任意 EXE 无统一静默规范</h4><p><b>措施：</b>安装参数配置化；软件提供方必须提供静默参数、卸载命令和成功检测规则。</p></div>
+        <div class="risk"><h4>应用回滚无法保证绝对成功</h4><p><b>措施：</b>保留旧包和配置备份；提供自动尝试、回滚结果、严重告警和人工恢复流程。</p></div>
+        <div class="risk"><h4>3 人团队测试资源不足</h4><p><b>措施：</b>AI 生成测试用例 + 自动化回归；项目方提供真实终端池，验收阶段配置独立测试支持。</p></div>
+        <div class="risk"><h4>大文件和并发分发压力</h4><p><b>措施：</b>对象存储、分片、断点续传、限速、二级缓存节点，避免安装包进入数据库。</p></div>
+        <div class="risk"><h4>高权限 Agent 的安全风险</h4><p><b>措施：</b>GUI 与 Agent 分离、IPC 鉴权、任务签名、最小权限、完整审计、脚本能力分期开放。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section white">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-title">
+          <small>10 / BID ATTACHMENTS</small>
+          <h2>建议随投标材料提供的硬实力附件</h2>
+        </div>
+        <p>真正提升可信度的不是更多形容词，而是可验证的人员、项目、代码、测试和演示材料。</p>
+      </div>
+      <div class="cards">
+        <div class="card"><div class="num">人员</div><h3>核心人员能力包</h3><p>脱敏简历、学历证明、头部企业经历、项目职责和本项目投入比例。</p></div>
+        <div class="card"><div class="num">案例</div><h3>项目证明包</h3><p>合同关键页、验收证明、系统截图、客户证明及可公开的技术成果。</p></div>
+        <div class="card"><div class="num">适配</div><h3>国产化测试包</h3><p>CPU / AI 卡 / 操作系统环境、适配问题、解决方案、测试结果和演示录像。</p></div>
+        <div class="card"><div class="num">研发</div><h3>工程管理证明</h3><p>Git 分支策略、代码评审、CI/CD、依赖扫描、测试报告和版本发布记录。</p></div>
+        <div class="card"><div class="num">PoC</div><h3>现场演示场景</h3><p>上传软件、合规检测、发布、客户端下载、静默安装、结果回传及失败重试。</p></div>
+        <div class="card"><div class="num">方案</div><h3>技术设计文档</h3><p>总体架构、接口状态机、安全设计、兼容矩阵、测试计划、部署和运维方案。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container inner">
+      <span>北京燕软京创科技有限公司｜软件分发与终端管理平台投标技术能力说明</span>
+      <span>内部演示版 V2.0 · 所有建议指标须在正式承诺前完成评审</span>
+    </div>
+  </footer>
+</body>
+</html>
